@@ -1,0 +1,48 @@
+{
+  "name": "autochessia",
+  "private": true,
+  "scripts": {
+    "build": "pnpm recursive run build",
+    "dev": "concurrently -n contracts,client -c cyan,magenta \"cd packages/contracts && pnpm run dev\" \"cd packages/client && pnpm run dev\"",
+    "dev:client": "pnpm --filter 'client' run dev",
+    "dev:contracts": "pnpm --filter 'contracts' dev",
+    "foundry:up": "curl -L https://foundry.paradigm.xyz | bash && bash $HOME/.foundry/bin/foundryup",
+    "mud:up": "pnpm mud set-version --tag main && pnpm install",
+    "prepare": "(forge --version || pnpm foundry:up);pnpm simple-git-hooks",
+    "test": "pnpm recursive run test"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier -w"
+    ],
+    "*.tsx": [
+      "prettier -w"
+    ],
+    "*.sol": [
+      "forge fmt"
+    ]
+  },
+  "devDependencies": {
+    "@latticexyz/cli": "2.0.0-next.11",
+    "@typescript-eslint/eslint-plugin": "5.46.1",
+    "@typescript-eslint/parser": "5.46.1",
+    "concurrently": "^8.0.1",
+    "eslint": "8.29.0",
+    "git-cz": "^4.9.0",
+    "lint-staged": "^13.2.3",
+    "prettier": "^2.8.8",
+    "rimraf": "^3.0.2",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "5.1.6"
+  },
+  "engines": {
+    "node": "18.x",
+    "pnpm": "8.x"
+  },
+  "dependencies": {
+    "eslint-plugin-react": "7.31.11"
+  }
+}

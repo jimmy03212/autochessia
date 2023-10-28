@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes shake-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-shake-horizontal {
+  animation-name: shake-horizontal;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.shop-modal {
+  .ant-card-body {
+    padding: 2px !important;
+  }
+
+  .ant-modal-content {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .ant-modal-root .ant-modal-mask {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .shop-wrap {
+    width: 881px;
+    height: 348px;
+    padding: 48px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    background: linear-gradient(
+      180deg,
+      rgba(59, 248, 255, 0.27) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    border-radius: 20px 20px 20px 20px;
+    opacity: 1;
+    backdrop-filter: blur(2px);
+  }
+}
+
+.ant-btn-primary {
+  background-color: #1677ff !important;
+}
+
+.text-white-wrap {
+  span {
+    color: #fff;
+  }
+}
+
+.autochessia-bg {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url(/assets/bg.svg);
+  background-size: 240px;
+  background-repeat: repeat;
+  background-position: top right;
+  background-color: #68829e;
+  font-family: brandonGrotesque !important;
+}
+
+.JoinGame {
+  .ant-table-thead tr th {
+    background: #2c84a8 !important;
+  }
+
+  .ant-table-thead
+    > tr
+    > th:not(:last-child):not(.ant-table-selection-column):not(
+      .ant-table-row-expand-icon-cell
+    ):not([colspan])::before {
+    background-color: royalblue;
+  }
+
+  .ant-table-wrapper .ant-table-thead > tr > th {
+    border-bottom: none;
+  }
+
+  .ant-table-tbody tr td {
+    background: #989cad !important;
+  }
+
+  .ant-table-wrapper .ant-table-tbody > tr > td {
+    border-bottom: none;
+  }
+
+  .ant-empty {
+    opacity: 0;
+  }
+}

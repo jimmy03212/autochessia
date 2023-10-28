@@ -1,0 +1,14 @@
+out/
+cache/
+node_modules/
+bindings/
+artifacts/
+abi/
+types/
+broadcast/
+src/codegen
+
+# Ignore MUD deploy artifacts
+deploys/**/*.json
+
+.env
